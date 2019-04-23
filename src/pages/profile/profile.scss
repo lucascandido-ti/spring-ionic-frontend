@@ -2,4 +2,17 @@ page-profile {
     .menu{
         color: black;
     }
+    .circle{
+        width: 20%;
+        border-radius: 100%;
+        margin: 25px auto 0 auto;
+    }
+
+    @media screen and (max-width: 600px){
+    .circle{
+        width: 60%;
+        border-radius: 100%;
+        margin: 25px auto 0 auto;
+    }
+  }
 }
