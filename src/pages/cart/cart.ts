@@ -64,4 +64,8 @@ export class CartPage {
     this.cartService.createOrClearCart();
     this.navCtrl.setRoot('CartPage');
   }
+
+  checkout(){
+    this.navCtrl.push('PickAddressPage');
+  }
 }
