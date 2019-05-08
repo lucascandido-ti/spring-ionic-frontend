@@ -22,7 +22,7 @@ export class ProdutosPage {
 
   }
 
-  ionViewDidLoad() {
+  loadData(){
     let categoria_id = this.navParams.get('categoria_id');
 
     let loader = this.presentLoading();
@@ -35,7 +35,11 @@ export class ProdutosPage {
       }, error =>{
         loader.dismiss();
       });
-    }
+  }
+
+  ionViewDidLoad() {
+      this.loadData();
+  }
 
     loadImageUrls() {
       for (var i=0; i<this.items.length; i++){
@@ -58,6 +62,13 @@ export class ProdutosPage {
       });
      loader.present();
      return loader;
+    }
+
+    doRefresh(refresher){
+      this.loadData();
+      setTimeout(() => {
+        refresher.complete();
+      }, 1000);
     }
 
 }
