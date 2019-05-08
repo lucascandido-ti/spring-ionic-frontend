@@ -21,6 +21,7 @@ export class CategoriasPage {
   bucketUrl: string = API_CONFIG.bucketBaseUrl;
 
   items: CategoriaDTO[];
+  loadingCtrl: any;
 
   constructor(
     public navCtrl: NavController,
@@ -37,6 +38,8 @@ export class CategoriasPage {
   }
 
   showProdutos(categoria_id: string){
+    let loader
     this.navCtrl.push('ProdutosPage', { categoria_id: categoria_id });
   }
+
 }
